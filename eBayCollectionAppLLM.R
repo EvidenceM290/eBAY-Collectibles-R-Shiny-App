@@ -549,11 +549,11 @@ server <- function(input, output, session) {
   connect_to_db <- function() {
     tryCatch({
       conn <- dbConnect(RMariaDB::MariaDB(),
-                        host = "ryanadjapong.clogay4kuwnd.us-east-2.rds.amazonaws.com",
+                        host = "localhost",
                         port = 3306,
                         dbname = "eBayCollectibles",
-                        user = "DrRyan",
-                        password = "NAnakwame1986")
+                        user = "root",
+                        password = "mypassword")
       if (!dbIsValid(conn)) stop("Invalid database connection.")
       conn
     }, error = function(e) {
